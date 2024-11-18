@@ -1,55 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Space Maps</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    .container {
-      margin: 20px;
-    }
-    img {
-      width: 150px;
-      height: 150px;
-    }
-    .map {
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interativo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <img src="assets/spacemapslogo.png" alt="Logo">
-    <br>
-    <select id="current-location">
-      <option value="">Onde você está?</option>
-      <option value="Biblioteca">Biblioteca</option>
-      <option value="Financeiro">Financeiro</option>
-      <option value="Secretaria">Secretaria</option>
-      <option value="Sala 2.3">Sala 2.3</option>
-      <option value="Portaria">Portaria</option>
-    </select>
-    <br><br>
-    <select id="destination">
-      <option value="">Selecione uma opção</option>
-      <option value="Biblioteca">Biblioteca</option>
-      <option value="Financeiro">Financeiro</option>
-      <option value="Secretaria">Secretaria</option>
-      <option value="Sala 2.3">Sala 2.3</option>
-      <option value="Portaria">Portaria</option>
-    </select>
-    <br><br>
-    <label>
-      <input type="checkbox" id="accessibility"> Acessibilidade
-    </label>
-    <br><br>
-    <button id="load-route">Carregar Rota</button>
-    <div id="map-container" class="map"></div>
-  </div>
-  <script src="app.js"></script>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Escolha seu destino</h1>
+    </header>
+    <main>
+        <div class="buttons">
+            <button onclick="selectDestination('Biblioteca')">Biblioteca</button>
+            <button onclick="selectDestination('Financeiro')">Financeiro</button>
+            <button onclick="selectDestination('Secretaria')">Secretaria</button>
+            <button onclick="selectDestination('Sala 2.3')">Sala 2.3</button>
+        </div>
+        <button id="accessibility" onclick="toggleAccessibility()">Opções de Acessibilidade</button>
+        <button id="load-route" onclick="loadRoute()">Carregar Rota</button>
+        <div id="map"></div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
